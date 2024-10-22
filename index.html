@@ -3,106 +3,179 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime Oto - Araç Kiralama</title>
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <title>Prime Oto - Lüks Araç Kiralama</title>
-    <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="dark">
-    <header id="main-header">
-      <div class="logo-container">
-        <div class="logo-placeholder"></div>
-        <span class="company-name">PRIME OTO</span>
-      </div>
-      <nav>
-        <a href="#ekip">Ekip</a>
-        <a href="#hizmetler">Hizmetler</a>
-        <a href="#hakkinda">Hakkında</a>
-        <a href="#fiyatlandirma">Fiyatlandırma</a>
-      </nav>
-      <div class="auth-buttons">
-        <button id="themeToggle" class="theme-toggle">
-          <i class="fas fa-moon"></i>
-        </button>
-        <a href="/giris" class="giris">Giriş</a>
-        <a href="/kayit" class="kayit">Kayıt ol</a>
-      </div>
-    </header>
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Prime Otoya Hoş Geldiniz</h1>
-        <p>
-          Lüks araç kiralama deneyiminizi başlatmak için hemen rezervasyon
-          yapın. Premium araçlar, özel hizmetler ve unutulmaz sürüş keyfi
-          sunuyoruz.
-        </p>
-        <div class="hero-buttons">
-          <a href="#" class="reservation-button">Hemen Rezervasyon Yapın</a>
-          <a href="#" class="info-button">Araç Filomuzu İnceleyin</a>
+  <body>
+    <nav class="navbar">
+      <div class="nav-brand">PRIME OTO</div>
+      <div class="search-container">
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Marka veya model ara..."
+          />
+          <button class="search-btn">
+            <i class="fas fa-search"></i>
+          </button>
         </div>
+        <div class="search-results" id="searchResults"></div>
       </div>
-    </section>
+      <div class="nav-links">
+        <a href="#" class="nav-link">Ekip</a>
+        <a href="#" class="nav-link">Hizmetler</a>
+        <a href="#" class="nav-link">Hakkında</a>
+        <a href="#" class="nav-link">Fiyatlandırma</a>
+      </div>
+      <div class="nav-buttons">
+        <button class="btn-mode">🌙</button>
+        <button class="btn-login">Giriş</button>
+        <button class="btn-register">Kayıt ol</button>
+      </div>
+    </nav>
 
-    <div class="content">
-      <div class="content-wrapper">
-        <div class="text-content">
-          <h2>Uçtan Uca Araç Kiralama Rehberi</h2>
-          <p>
-            Araba kiralama sürecine başlamak, sürdürmek ve geliştirmek için adım adım öneriler öğrenin. Doğru araç seçiminden, kiralama sürecine kadar her şeyi kapsar.
-          </p>
-    
-          <div class="guide-steps">
-            <div class="step">
-              <i class="fa fa-car"></i>
-              <h4>Araç Seçiminde Nelere Dikkat Edilmeli?</h4>
-              <p>İhtiyacınıza uygun araçları seçmek önemlidir. Yolda güvenliğiniz ve konforunuz için, kilometre durumu ve yakıt tasarrufu gibi kriterleri göz önünde bulundurun.</p>
+    <main>
+      <section class="featured-cars">
+        <h1>Ankara İçin En Çok Tercih Edilen Kiralık Araçlar</h1>
+
+        <div class="categories">
+          <button class="category-btn active">Ekonomik</button>
+          <button class="category-btn">Orta</button>
+          <button class="category-btn">Üst</button>
+          <button class="category-btn">Lüks</button>
+          <button class="category-btn">Minibüs</button>
+          <button class="category-btn">Suv</button>
+        </div>
+
+        <div class="car-cards">
+          <div class="car-card">
+            <div class="car-image">
+              <img src="/api/placeholder/280/160" alt="Fiat Fiorino Combi" />
+              <div class="car-badge">Popüler</div>
             </div>
-    
-            <div class="step">
-              <i class="fa fa-calendar"></i>
-              <h4>Rezervasyon Nasıl Yapılır?</h4>
-              <p>Aracı kiralamadan önce rezervasyon yaparak, istediğiniz araç için uygun bir tarih belirleyin. Erken rezervasyon avantajlarından faydalanarak daha ekonomik çözümler bulun.</p>
+            <div class="car-info">
+              <h3>Fiat Fiorino Combi</h3>
+              <div class="car-specs">
+                <span><i class="fas fa-gas-pump"></i> Dizel</span>
+                <span><i class="fas fa-cog"></i> Manuel</span>
+              </div>
+              <div class="car-features">
+                <span><i class="fas fa-user"></i> 5 Kişilik</span>
+                <span><i class="fas fa-suitcase"></i> 3 Bavul</span>
+              </div>
+              <div class="car-price">
+                <div class="price-info">
+                  <span class="price">499 TL</span>
+                  <span class="price-period">/günlük</span>
+                </div>
+                <button class="rent-btn">
+                  Hemen kirala <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
             </div>
-    
-            <div class="step">
-              <i class="fa fa-file-alt"></i>
-              <h4>Kiralama Süreci Nasıl İlerler?</h4>
-              <p>Gerekli belgeleri hazırlayın ve kiralama sözleşmesini dikkatlice inceleyin. Tüm maddeleri anlayarak imzalamak, kiralama sürecinde olası sorunları önlemeye yardımcı olur.</p>
+          </div>
+
+          <div class="car-card">
+            <div class="car-image">
+              <img src="/api/placeholder/280/160" alt="Renault Clio" />
+              <div class="car-badge">Yeni</div>
             </div>
-    
-            <div class="step">
-              <i class="fa fa-dollar-sign"></i>
-              <h4>Kiralama Ücretleri Nasıl Belirlenir?</h4>
-              <p>Kiralama ücretleri, aracın modeline, kiralama süresine ve ek hizmetlere göre değişiklik gösterir. Net bir fiyatlandırma politikası sunan yerlerle çalışmak avantaj sağlar.</p>
+            <div class="car-info">
+              <h3>Renault Clio</h3>
+              <div class="car-specs">
+                <span><i class="fas fa-gas-pump"></i> Benzin</span>
+                <span><i class="fas fa-cog"></i> Manuel</span>
+              </div>
+              <div class="car-features">
+                <span><i class="fas fa-user"></i> 5 Kişilik</span>
+                <span><i class="fas fa-suitcase"></i> 2 Bavul</span>
+              </div>
+              <div class="car-price">
+                <div class="price-info">
+                  <span class="price">515 TL</span>
+                  <span class="price-period">/günlük</span>
+                </div>
+                <button class="rent-btn">
+                  Hemen kirala <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
             </div>
-    
-            <div class="step">
-              <i class="fa fa-search"></i>
-              <h4>En Uygun Araç Nasıl Bulunur?</h4>
-              <p>İhtiyaçlarınıza en uygun aracı bulmak için, galerideki araçları karşılaştırın. Kullanım amacınıza en uygun olanı belirleyerek, konforlu bir sürüş deneyimi yaşayın.</p>
+          </div>
+
+          <div class="car-card">
+            <div class="car-image">
+              <img src="/api/placeholder/280/160" alt="Fiat Egea" />
             </div>
-    
-            <div class="step">
-              <i class="fa fa-calendar-alt"></i>
-              <h4>Uzun Dönem Kiralama Stratejisi</h4>
-              <p>Uzun dönem kiralama yaparak, ekonomik avantajlar elde edebilir ve düzenli kullanımlarınızda maliyetlerinizi düşürebilirsiniz. Kiralama sırasında profesyonel destek alarak, ihtiyaçlarınıza uygun çözümler bulun.</p>
+            <div class="car-info">
+              <h3>Fiat Egea</h3>
+              <div class="car-specs">
+                <span><i class="fas fa-gas-pump"></i> Benzin</span>
+                <span><i class="fas fa-cog"></i> Manuel</span>
+              </div>
+              <div class="car-features">
+                <span><i class="fas fa-user"></i> 5 Kişilik</span>
+                <span><i class="fas fa-suitcase"></i> 4 Bavul</span>
+              </div>
+              <div class="car-price">
+                <div class="price-info">
+                  <span class="price">515 TL</span>
+                  <span class="price-period">/günlük</span>
+                </div>
+                <button class="rent-btn">
+                  Hemen kirala <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <div class="image-content">
-          <img
-            src="https://images.pexels.com/photos/3778769/pexels-photo-3778769.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="Lüks Araç"
-          />
+      <section class="cheap-cars">
+        <h2>Ankara Ucuz Kiralık Araçlar</h2>
+        <div class="cheap-cars-list">
+          <div class="cheap-car-item">
+            <div class="car-basic-info">
+              <i class="fas fa-car"></i>
+              <span>Fiat Fiorino Combi Manuel</span>
+            </div>
+            <div class="car-price-tag">499 TL</div>
+          </div>
+          <div class="cheap-car-item">
+            <div class="car-basic-info">
+              <i class="fas fa-car"></i>
+              <span>Renault Clio Manuel</span>
+            </div>
+            <div class="car-price-tag">515 TL</div>
+          </div>
+          <div class="cheap-car-item">
+            <div class="car-basic-info">
+              <i class="fas fa-car"></i>
+              <span>Fiat Egea Manuel</span>
+            </div>
+            <div class="car-price-tag">515 TL</div>
+          </div>
+          <div class="cheap-car-item">
+            <div class="car-basic-info">
+              <i class="fas fa-car"></i>
+              <span>Fiat Egea Cross Manuel</span>
+            </div>
+            <div class="car-price-tag">615 TL</div>
+          </div>
+          <div class="cheap-car-item">
+            <div class="car-basic-info">
+              <i class="fas fa-car"></i>
+              <span>Citroen C Elysee Manuel</span>
+            </div>
+            <div class="car-price-tag">630 TL</div>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
 
     <script src="script.js"></script>
   </body>

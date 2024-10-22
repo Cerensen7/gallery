@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="car_rental_styles.css">
+    <title>Car Rental Service</title>
+</head>
+<body>
+    <header>
+        <div class="logo">PRIME OTO</div>
+        <nav>
+            <ul>
+                <li><a href="#rental">Car Rental</a></li>
+                <li><a href="#payment">Payment</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Car Rental Section -->
+        <section id="rental" class="section">
+            <h2>Car Rental Operations</h2>
+            <form id="rentalForm">
+                <div>
+                    <label for="rentalDate">Select Date:</label>
+                    <input type="date" id="rentalDate" required>
+                </div>
+                <div>
+                    <label for="services">Additional Services:</label>
+                    <select id="services">
+                        <option value="gps">GPS</option>
+                        <option value="babySeat">Baby Seat</option>
+                        <option value="insurance">Insurance</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="duration">Rental Duration (days):</label>
+                    <input type="number" id="duration" min="1" value="1" required>
+                </div>
+                <button type="submit">Book Now</button>
+            </form>
+        </section>
+
+        <!-- Payment System Section -->
+        <section id="payment" class="section">
+            <h2>Payment System</h2>
+            <form id="paymentForm">
+                <div>
+                    <label for="paymentMethod">Choose Payment Method:</label>
+                    <select id="paymentMethod">
+                        <option value="creditCard">Credit Card</option>
+                        <option value="bankTransfer">Bank Transfer</option>
+                        <option value="onlinePayment">Online Payment</option>
+                    </select>
+                </div>
+                <div id="paymentDetails">
+                    <!-- Kredi Kartı Ödeme Alanı Varsayılan Olarak Gösterilecek -->
+                    <div class="creditCardInfo">
+                        <label>Card Number:</label>
+                        <input type="text" id="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX" required>
+                        <label>Card Expiry Date:</label>
+                        <input type="text" id="cardExpiry" placeholder="MM/YY" required>
+                        <label>CVV:</label>
+                        <input type="text" id="cardCVV" placeholder="XXX" required>
+                    </div>
+                </div>
+                <button type="submit">Make Payment</button>
+            </form>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews" class="section">
+            <h2>Review & Rating System</h2>
+            <form id="reviewForm">
+                <div>
+                    <label for="rating">Rate the Car:</label>
+                    <select id="rating">
+                        <option value="5">★★★★★</option>
+                        <option value="4">★★★★</option>
+                        <option value="3">★★★</option>
+                        <option value="2">★★</option>
+                        <option value="1">★</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="review">Your Review:</label>
+                    <textarea id="review" rows="3" placeholder="Share your experience..."></textarea>
+                </div>
+                <button type="submit">Submit Review</button>
+            </form>
+
+            <div id="reviewList"></div>
+        </section>
+    </main>
+
+    <script src="car_rental_script.js"></script>
+</body>
+</html>
